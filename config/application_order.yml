@@ -1,0 +1,43 @@
+server:
+          port: 80
+
+          spring:
+                    application:
+                                name: cloud-order-client #服务名称
+                                  cloud:
+                                              config:
+                                                            server:
+                                                                            git:
+                                                                                              uri: git@gitee.com:niunafei1/springcloud.git
+                                                                                                        username: niunafei0315@163.com
+                                                                                                                  password:
+                                                                                                                                label: config
+
+                                                                                                                                eureka:
+                                                                                                                                          client: #客户端注册进eureka服务列表内
+                                                                                                                                              service-url:
+                                                                                                                                                            #defaultZone: http://eureka7001.com:7001/eureka/, http://eureka7002.com:7002/eureka/   #注册中心的地址
+                                                                                                                                                            #      defaultZone: http://eureka7001.com:7001/eureka/
+                                                                                                                                                            #        instance:
+                                                                                                                                                            #            instance-id: consumer-order80    #这个是修改Eureka界面的Status名称
+                                                                                                                                                            #                prefer-ip-addresser-ip-address: true    #这个是设置鼠标放在status上的时候，出现的提示，设置ip地址显示
+                                                                                                                                                            #
+                                                                                                                                                            #                #openfeign的超时处理
+                                                                                                                                                            #                feign:
+                                                                                                                                                            #                  client:
+                                                                                                                                                            #                      config:
+                                                                                                                                                            #                            default:
+                                                                                                                                                            #                                    # 指的是建立连接所用的时间,适用于网络状态正常的情况下,两端连接所用的时间
+                                                                                                                                                            #                                            connectTimeout: 5000
+                                                                                                                                                            #                                                    # 指的是建立连接后从服务器读取到可用资源所用的时间
+                                                                                                                                                            #                                                            readTimeout: 5000
+                                                                                                                                                            #                                                              hystrix:   #熔断
+                                                                                                                                                            #                                                                  enabled: true
+                                                                                                                                                            #
+                                                                                                                                                            #                                                                  #feign日志打印
+                                                                                                                                                            #                                                                  logging:
+                                                                                                                                                            #                                                                    level:
+                                                                                                                                                            #                                                                        com.sun.cloud.service.PaymentService: debug
+                                                                                                                                                            #
+                                                                                                                                                            #
+                                                                                                                                                            #
