@@ -1,0 +1,28 @@
+
+ureka:
+  client: 
+    service-url:
+      
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: consumer-order80    
+    prefer-ip-addresser-ip-address: true    
+
+
+feign:
+  client:
+    config:
+      default:
+        
+        connectTimeout: 5000
+       
+        readTimeout: 5000
+  hystrix:   
+    enabled: true
+
+
+logging:
+  level:
+    com.sun.cloud.service.PaymentService: debug
+
+
